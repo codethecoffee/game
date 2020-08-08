@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovePlayer.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovePlayer.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/MovePlayer.cs" Line="31" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +19,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3538553a-3045-4eb2-828b-2062c96a5dd1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f978a5e6-3326-4bf6-804d-76c0e258d785" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

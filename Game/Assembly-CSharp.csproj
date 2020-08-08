@@ -64,12 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
-    <None Include="Assets\Platformer Assets Base\Spritesheet\tiles_sheet.xml" />
-    <None Include="Assets\Platformer Assets Base\Spritesheet\hud_sheet.xml" />
-    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
-    <None Include="Assets\Platformer Assets Base\Spritesheet\player_sheet.xml" />
-    <None Include="Assets\Platformer Assets Base\Spritesheet\enemies_sheet.xml" />
-    <None Include="Assets\Platformer Assets Base\Spritesheet\items_sheet.xml" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
