@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Grounded.cs" />
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
     <None Include="Assets\Platformer Assets Base\Spritesheet\tiles_sheet.xml" />
     <None Include="Assets\Platformer Assets Base\Spritesheet\hud_sheet.xml" />
