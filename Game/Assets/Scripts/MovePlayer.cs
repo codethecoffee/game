@@ -25,23 +25,10 @@ public class MovePlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            Debug.Log("Touched the ground!");
             isGrounded = true;
         }
 
-        if (collision.gameObject.tag == "EnemyHead")
-        {
-            isGrounded = true;
-
-            GameObject enemyObject = collision.gameObject;
-
-            // Destroy the enemy
-            Destroy(collision.transform.root.gameObject);
-        }
-    }
-
-    void OnCollisionStay()
-    {
-        isGrounded = true;
     }
 
     void Update()
