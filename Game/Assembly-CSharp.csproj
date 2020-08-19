@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\JumpOnEnemy.cs" />
     <Compile Include="Assets\Scripts\MoveAnimation.cs" />
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
+    <Compile Include="Assets\Scripts\TouchSpike.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
