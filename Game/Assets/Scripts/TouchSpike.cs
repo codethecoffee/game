@@ -4,27 +4,42 @@ using UnityEngine;
 
 public class TouchSpike : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float reboundForce = 150.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //look more into the spikes & how to apply force for the upwards bump
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Destroy player when it comes in contact
+        Debug.Log(collision.gameObject.name);
+        // uhh rethink how to detect player vs player's feet
 
-
-        if (collision.gameObject.tag != "Ground" && collision.gameObject.tag != "Spike")
+        if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Player touched a spike");
-            Destroy(collision.transform.root.gameObject);
+
+            if (collision.gameObject.name == "PlayerFeetCollider")
+            {
+                Player p = collision.gameObject.GetComponentInParent<Player>();
+                MovePlayer mp = collision.gameObject.GetComponentInParent<MovePlayer>();
+                mp.isGrounded = true;
+                if (!p.invincible)
+                {
+                    StartCoroutine(p.SetInvincible());
+                    p.LoseLife();
+                }
+                collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
+            } else
+            {
+                Player p = collision.gameObject.GetComponent<Player>();
+                MovePlayer mp = collision.gameObject.GetComponent<MovePlayer>();
+                mp.isGrounded = true;
+                if (!p.invincible)
+                {
+                    StartCoroutine(p.SetInvincible());
+                    p.LoseLife();
+                }
+                collision.rigidbody.AddForce(transform.up * reboundForce);
+            }
+           
         }
     }
 }
