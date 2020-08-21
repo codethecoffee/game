@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 766558807}
   - component: {fileID: 766558811}
   - component: {fileID: 766558810}
-  - component: {fileID: 766558809}
   - component: {fileID: 766558808}
   m_Layer: 0
   m_Name: PlayerFeetCollider
@@ -517,28 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b516e70ad47d845cea3e1766f66ae372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1094615205}
---- !u!50 &766558809
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766558806}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  mPlayer: {fileID: 1094615205}
+  player: {fileID: 1094615208}
 --- !u!61 &766558810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1347,7 +1326,6 @@ GameObject:
   - component: {fileID: 1659617770}
   - component: {fileID: 1659617772}
   - component: {fileID: 1659617771}
-  - component: {fileID: 1659617773}
   m_Layer: 0
   m_Name: EnemyCollider
   m_TagString: EnemyHead
@@ -1445,27 +1423,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1659617773
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659617769}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &1683906373
 PrefabInstance:
   m_ObjectHideFlags: 0

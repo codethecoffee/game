@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class JumpOnEnemy : MonoBehaviour
 {
-    public MovePlayer player;
+    public MovePlayer mPlayer;
+    public Player player;
+    //maybe set rebound force in the player
+    public float reboundForce = 150.0f;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.name == "PlayerFeetCollider" 
-            && collision.gameObject.tag == "EnemyHead")
+        if (collision.gameObject.tag == "EnemyHead")
         {
-            Debug.Log("Jumping on Enemy");
-            player.isGrounded = true;
-            GameObject enemyObject = collision.gameObject;
-            // Destroy the enemy
-            Destroy(collision.transform.root.gameObject);
+            mPlayer.isGrounded = true;
+            player.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
+            collision.gameObject.GetComponentInParent<Enemy>().LoseLife();
+            
         }
     }
 }
