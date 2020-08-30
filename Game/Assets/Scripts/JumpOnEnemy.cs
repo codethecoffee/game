@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class JumpOnEnemy : MonoBehaviour
 {
-    public MovePlayer player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public MovePlayer mPlayer;
+    public Player player;
+    //maybe set rebound force in the player
+    public float reboundForce = 150.0f;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (gameObject.tag == "Player" && collision.gameObject.tag == "EnemyHead")
+        if (collision.gameObject.tag == "EnemyHead")
         {
-            Debug.Log("Jumping on Enemy");
-            player.isGrounded = true;
-            GameObject enemyObject = collision.gameObject;
-            // Destroy the enemy
-            Destroy(collision.transform.root.gameObject);
+            mPlayer.isGrounded = true;
+            player.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
+            collision.gameObject.GetComponentInParent<Enemy>().LoseLife();
+            
         }
     }
 }
