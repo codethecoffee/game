@@ -7,7 +7,8 @@ public class JumpOnEnemy : MonoBehaviour
     public MovePlayer mPlayer;
     public Player player;
     //maybe set rebound force in the player
-    public float reboundForce = 150.0f;
+    public float reboundForce = 950.0f;
+    public float damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class JumpOnEnemy : MonoBehaviour
         {
             mPlayer.isGrounded = true;
             player.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
-            collision.gameObject.GetComponentInParent<Enemy>().LoseLife();
+            collision.gameObject.GetComponentInParent<Enemy>().LoseHP(34);
             
         }
     }
