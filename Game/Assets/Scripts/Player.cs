@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Score stuff!
+    public float totalScore = 0;
+    public int numPresents = 0; // Number of present pick-ups
+
     //things related to HP
     private int _maxhp = 100;
     private int _hp = 100;
@@ -73,12 +77,35 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Update score based on the type of pick-up
+    public void UpdateScore(string pickupType)
+    {
+        switch (pickupType)
+        {
+            case "Present":
+                numPresents += 1;
+                totalScore += 10;
+                break;
+            default:
+                break;
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("attack attack");
             StartCoroutine(SetAttacking());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Present"))
+        {
+            UpdateScore(collision.gameObject.tag);
+            Destroy(collision.gameObject);
         }
     }
 }
