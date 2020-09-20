@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Player : MonoBehaviour
 {
     // Score stuff!
     public float totalScore = 0;
     public int numPresents = 0; // Number of present pick-ups
+    public int numCherries = 0; // Number of cherry pick-ups
 
     //things related to HP
     private int _maxhp = 100;
@@ -86,6 +88,10 @@ public class Player : MonoBehaviour
                 numPresents += 1;
                 totalScore += 10;
                 break;
+            case "Cherry":
+                numCherries += 1;
+                totalScore += 2;
+                break;
             default:
                 break;
         }
@@ -102,8 +108,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Present"))
+        string collisionTag = collision.gameObject.tag;
+
+        string[] pickupTypes = { "Present", "Cherry" };
+
+        // If it is a pick-up...
+        if (pickupTypes.Contains(collisionTag))
         {
+            Debug.Log("Pick up collision!");
             UpdateScore(collision.gameObject.tag);
             Destroy(collision.gameObject);
         }
