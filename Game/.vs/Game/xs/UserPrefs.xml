@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Weapon.cs">
     <Files>
       <File FileName="Assets/Scripts/MovePlayer.cs" Line="32" Column="6" />
       <File FileName="Assets/Scripts/TouchSpike.cs" />
-      <File FileName="Assets/Scripts/Player.cs" Line="109" Column="10" NotebookId="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="118" Column="45" NotebookId="1" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
