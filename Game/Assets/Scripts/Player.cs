@@ -106,6 +106,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    // TODO: Factor this out to so it's a script attached to pick up objects
+    // rather than the player object
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         string collisionTag = collision.gameObject.tag;
