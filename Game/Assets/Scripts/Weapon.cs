@@ -5,15 +5,21 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Player player;
+    public int damage;
+    public bool right;
     //weapon is inRange for attack
     private bool _inRange = false;
     private Enemy _enemy;
+    private Vector3 _weaponRotationAnimationAngle;
+    private float _weaponAnimationTimer = .1f;
 
+    private void Start()
+    {
+        _weaponRotationAnimationAngle = right ? Vector3.forward * -10 : Vector3.forward * 10;
+    }
     public void HitEnemy(Enemy enemy)
     {
-        //play weapon animation
-        //play sound effect
-        enemy.LoseLife();
+        enemy.LoseHP(damage);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -42,8 +48,29 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    IEnumerator playRotationAnimation()
+    {
+        var fromAngle = transform.parent.transform.rotation;
+        var toAngle = Quaternion.Euler(transform.eulerAngles + _weaponRotationAnimationAngle);
+        for (var t = 0f; t < 1; t += Time.deltaTime / _weaponAnimationTimer)
+        {
+            transform.parent.transform.rotation = Quaternion.Lerp(fromAngle, toAngle, t);
+            yield return null;
+        }
+        for (var t = 0f; t < 1; t += Time.deltaTime / _weaponAnimationTimer)
+        {
+            transform.parent.transform.rotation = Quaternion.Lerp(toAngle, fromAngle, t);
+            yield return null;
+        }
+    }
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(playRotationAnimation());
+        }
+
         if (_inRange && player.isAttacking)
         {
             player.isAttacking = false;
