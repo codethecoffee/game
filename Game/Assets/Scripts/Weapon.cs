@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Weapon : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        string[] pickupTypes = { "Present", "Cherry" };
+
         if (collider.gameObject.tag == "Enemy" || collider.gameObject.tag == "EnemyHead")
         {
             _inRange = true;
@@ -37,6 +40,13 @@ public class Weapon : MonoBehaviour
             }
                 
         }
+        else if (pickupTypes.Contains(collider.gameObject.tag))
+        {
+            Debug.Log("Pick up collision!");
+            player.UpdateScore(collider.gameObject.tag);
+            Destroy(collider.gameObject);
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collider)

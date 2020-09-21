@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TouchSpike.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../README.md">
     <Files>
       <File FileName="Assets/Scripts/MovePlayer.cs" Line="32" Column="6" />
-      <File FileName="Assets/Scripts/JumpOnSpike.cs" Line="31" Column="1" />
-      <File FileName="Assets/Scripts/JumpOnEnemy.cs" Line="3" Column="19" NotebookId="1" />
+      <File FileName="Assets/Scripts/TouchSpike.cs" />
+      <File FileName="Assets/Scripts/Player.cs" Line="110" Column="37" NotebookId="1" />
+      <File FileName="Assets/Scripts/Weapon.cs" Line="46" Column="47" NotebookId="1" />
+      <File FileName="../README.md" Line="8" Column="8" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="55bfefa2-7444-4e81-a353-501b0df59523" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="84b6f371-2c25-47af-adaa-a87fb827285e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/suzylee/Desktop/projects/game/Game/Assets/Scripts/JumpOnEnemy.cs" relfile="Assets/Scripts/JumpOnEnemy.cs" line="16" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

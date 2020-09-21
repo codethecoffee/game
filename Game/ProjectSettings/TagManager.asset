@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - EnemyHead
   - Spike
+  - Present
+  - Cherry
   layers:
   - Default
   - TransparentFX
