@@ -97,6 +97,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Update score after killing enemy
+    // TODO: Vary the number of points earned by enemy type.
+    // Currently, there's only a single enemy type, but we might add more!
+    public void UpdateScoreOnEnemyKill()
+    {
+        totalScore += 20;
+    }
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

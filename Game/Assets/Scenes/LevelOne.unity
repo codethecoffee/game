@@ -1774,6 +1774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: -1
   healthBar: {fileID: 889570925}
+  player: {fileID: 1094615208}
 --- !u!95 &1243960262
 Animator:
   serializedVersion: 3

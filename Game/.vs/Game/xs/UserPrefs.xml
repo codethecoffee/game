@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="98" Column="6" />
-      <File FileName="Assets/Scripts/UIManager.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Player.cs" Line="58" Column="38" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="22" Column="17" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private float _maxHealthBarLength;
     private float _healthBarLength;
 
+    public Player player;
+
     bool rightFacing;
 
     void Start()
@@ -70,5 +72,6 @@ public class Enemy : MonoBehaviour
     public void EnemyDeath()
     {
         Destroy(gameObject);
+        player.UpdateScoreOnEnemyKill();
     }
 }
