@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\TouchSpike.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\Void.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Reference Include="UnityEngine">
