@@ -159,7 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0a8e5ab8ae54528a4cbedfd75dfcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reboundForce: 150
+  reboundForce: 350
+  damage: 25
 --- !u!50 &4307115352247932013
 Rigidbody2D:
   serializedVersion: 4
@@ -334,7 +335,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0a8e5ab8ae54528a4cbedfd75dfcb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reboundForce: 150
+  reboundForce: 350
+  damage: 25
 --- !u!50 &3219228189474271607
 Rigidbody2D:
   serializedVersion: 4

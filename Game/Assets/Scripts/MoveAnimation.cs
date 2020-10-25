@@ -7,7 +7,7 @@ public class MoveAnimation : MonoBehaviour
     Animator playerAnimator;
     SpriteRenderer sprite;
     bool rightFacing = true;
-    float _hurtTimer = 1f;
+    float _hurtTimer = .4f;
 
     public GameObject weaponLeft;
     public GameObject weaponRight;
@@ -56,13 +56,13 @@ public class MoveAnimation : MonoBehaviour
             playerAnimator.SetBool("isWalking", false);
         }
 
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             && GetComponent<MovePlayer>().isGrounded)
         {
             playerAnimator.SetBool("isJumping", true);
         }
 
-        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))) { 
+        if ((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))) {
             playerAnimator.SetBool("isJumping", false);
         }
     }

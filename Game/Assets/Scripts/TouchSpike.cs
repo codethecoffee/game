@@ -26,8 +26,8 @@ public class TouchSpike : MonoBehaviour
                     StartCoroutine(ma.playHurtAnimation());
                     StartCoroutine(p.SetInvincible());
                     p.LoseHP(damage);
+                    collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
                 }
-                collision.transform.parent.GetComponent<Rigidbody2D>().AddForce(transform.up * reboundForce);
             } else
             {
                 Player p = collision.gameObject.GetComponent<Player>();
@@ -39,10 +39,10 @@ public class TouchSpike : MonoBehaviour
                     StartCoroutine(ma.playHurtAnimation());
                     StartCoroutine(p.SetInvincible());
                     p.LoseHP(damage);
-                }
-                collision.rigidbody.AddForce(transform.up * reboundForce);
+                    collision.rigidbody.AddForce(transform.up * reboundForce);
+                }      
             }
-           
+
         }
     }
 }
