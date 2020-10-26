@@ -5,6 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int speed;
+    //if not horizontal moving, will be vertical moving
+    public bool horzMoving;
+    public float upperBoundary;
+    public float lowerBoundary;
     private Rigidbody2D rb;
 
     private int _maxhp = 100;
@@ -27,7 +31,7 @@ public class Enemy : MonoBehaviour
         _animator.SetBool("isWalking", true);
 
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(speed, 0f);
+        rb.velocity = horzMoving ? new Vector2(speed, 0) : new Vector2(0, speed);
         rightFacing = speed > 0 ? true : false;
     }
 
@@ -37,8 +41,10 @@ public class Enemy : MonoBehaviour
         {
             speed *= -1;
             rightFacing = !rightFacing;
-            rb.velocity = new Vector2(speed, 0f);
-            GetComponent<SpriteRenderer>().flipX = !rightFacing ? false : true;
+            rb.velocity = horzMoving ? new Vector2(speed, 0) : new Vector2(0, speed);
+            if (horzMoving){
+                GetComponent<SpriteRenderer>().flipX = !rightFacing ? false : true;
+            }
         }
     }
 
@@ -54,11 +60,10 @@ public class Enemy : MonoBehaviour
         StartCoroutine(playHurtAnimation());
         _healthBarLength = ((float)(_hp - hpLoss) / _maxhp) * _maxHealthBarLength;
         healthBar.localScale = new Vector3(
-            _healthBarLength, 
-            healthBar.localScale.y, 
+            _healthBarLength,
+            healthBar.localScale.y,
             healthBar.localScale.z);
         _hp -= hpLoss;
-
 
         if (_hp <= 0)
         {
@@ -70,5 +75,33 @@ public class Enemy : MonoBehaviour
     public void EnemyDeath()
     {
         Destroy(gameObject);
+    }
+
+    void Update(){
+        if (horzMoving){
+            //check boundaries for horizontal movement
+            if (transform.position.x > upperBoundary){
+                speed *= -1;
+                rightFacing = !rightFacing;
+                rb.velocity = new Vector2(speed, 0);
+                GetComponent<SpriteRenderer>().flipX = !rightFacing ? false : true;
+            } else if (transform.position.x < lowerBoundary){
+                speed *= -1;
+                rightFacing = !rightFacing;
+                rb.velocity = new Vector2(speed, 0);
+                GetComponent<SpriteRenderer>().flipX = !rightFacing ? false : true;
+            }       
+        } else {
+            //check boundaries for vertical movement
+            if (transform.position.y > upperBoundary){
+                speed *= -1;
+                rightFacing = !rightFacing;
+                rb.velocity = new Vector2(0, speed);
+            } else if (transform.position.y < lowerBoundary){
+                speed *= -1;
+                rightFacing = !rightFacing;
+                rb.velocity = new Vector2(0, speed);
+            } 
+        }      
     }
 }
